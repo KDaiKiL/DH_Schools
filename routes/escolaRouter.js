@@ -3,8 +3,8 @@ const router = express.Router();
 const escola = require('../controllers/escolaController')
 
 router.get('/home', escola.home);
+router.get('/cursos', escola.cursos);
 router.get('/alunos', escola.alunos);
-router.get('/tabela', escola.table);
 router.get('/alunos/:id', escola.aluno);
 router.get('/alunos2019', escola.alunosYear19);
 router.get('/alunos2019/Re', escola.alunosReYear19);

@@ -30,12 +30,14 @@
                       </tr>
                     </thead>
                     <tbody>
-                            <tr>
-                                <td> s </td>
-                                <td> s </td>
-                                <td> s </td>
-                                <td> s </td>
-                            </tr>
+                            <% alunos.forEach(element => { %>
+                                <tr>
+                                    <td> <%= element.id %> </td>
+                                    <td> <%= element.nome %> </td>
+                                    <td> <%= element.sobrenome %> </td>
+                                    <td> <%= element.ano_matricula %> </td>
+                                </tr>
+                            <% }) %> 
                     </tbody>
                 </table>
             </p>

@@ -1,4 +1,4 @@
-const { Aluno, Professor, Turma, Area, Sequelize } = require('../models');
+const { Aluno, Professor, Turma, Area, Curso, Sequelize } = require('../models');
 const Op = Sequelize.Op
 
 
@@ -8,7 +8,7 @@ module.exports = {
     },
     alunos: async (req, res) => {
         const alunos = await Aluno.findAll()
-        res.json(alunos)
+        res.render('alunos', { alunos })
     },
     aluno: async (req, res) => {
         const {id} = req.params
@@ -55,7 +55,8 @@ module.exports = {
         })
         res.json(alunos)
     },
-    table: (req, res) => {
-        res.render('alunos')
+    cursos: async (req, res) => {
+        const cursos = await Curso.findAll()
+        res.render('cursos', { cursos })
     }
 }
