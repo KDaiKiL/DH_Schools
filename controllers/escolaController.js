@@ -58,7 +58,7 @@ module.exports = {
     cursos: async (req, res) => {
         const cursos = await Curso.findAll({
             include: ['area']
-        }) 
+        })
         res.render('cursos', {cursos})
     },
     novoAluno: (req, res) => {

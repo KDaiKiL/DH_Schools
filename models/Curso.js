@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
         Curso.belongsTo(models.Area, {
             as: 'area',
             foreignKey: 'area_id'
-        }) 
+        })
     }
 
     return Curso

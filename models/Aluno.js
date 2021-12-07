@@ -22,5 +22,5 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'alunos'
     });
 
-    return Aluno 
+    return Aluno
 }

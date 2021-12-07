@@ -15,7 +15,7 @@ module.exports = (sequelize, dataTypes) => {
     })
 
     Area.associate = (models) => {
-        Area.hasMany(models.Curso, { 
+        Area.hasMany(models.Curso, {
             as: "cursos",
             foreignKey: "area_id"
         });
