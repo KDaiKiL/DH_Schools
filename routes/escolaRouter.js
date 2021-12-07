@@ -13,4 +13,15 @@ router.get('/professoresId3515', escola.professoresId);
 router.get('/turmas', escola.turmas);
 router.get('/areas', escola.areas)
 
+router.get('/aluno/cadastro', escola.novoAluno)
+router.post('/aluno/cadastro', escola.cadastroAluno)
+
+router.get('/aluno/:id/edit', escola.edit)
+router.put('/aluno/:id/edit', escola.editado)
+
+router.delete('/aluno/:id/delete', escola.deleteAluno)
+
+router.get('/curso/cadastro', escola.novoCurso)
+router.post('/curso/cadastro', escola.cadastroCurso)
+
 module.exports = router

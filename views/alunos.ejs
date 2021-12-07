@@ -19,6 +19,11 @@
 
     <main>
         <div class="container">
+
+            <a href="/aluno/cadastro" style="margin-bottom: 15px;">
+                <button class="novoAluno">Cadastrar um novo aluno</button>
+            </a>
+
             <p>
                 <table class="table table-dark table-striped">
                     <thead>
@@ -27,6 +32,8 @@
                         <th scope="col">Nome</th>
                         <th scope="col">Sobrenome</th>
                         <th scope="col">Ano da matricula</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delet</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -36,6 +43,16 @@
                                     <td> <%= element.nome %> </td>
                                     <td> <%= element.sobrenome %> </td>
                                     <td> <%= element.ano_matricula %> </td>
+                                    <td>
+                                        <a href="/aluno/<%= element.id %>/edit">
+                                            <button>Editar Aluno</button>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <form action="/aluno/<%= element.id %>/delete?_method=DELETE" method="post">
+                                            <button type="submit" class="deleteAluno">Deletar aluno</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             <% }) %> 
                     </tbody>

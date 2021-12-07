@@ -13,5 +13,13 @@ module.exports = (sequelize, dataTypes) => {
     }, {
         tableName: 'areas'
     })
+
+    Area.associate = (models) => {
+        Area.hasMany(models.Curso, {
+            as: "cursos",
+            foreignKey: "area_id"
+        });
+    }
+
     return Area
 }

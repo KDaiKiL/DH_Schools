@@ -56,7 +56,59 @@ module.exports = {
         res.json(alunos)
     },
     cursos: async (req, res) => {
-        const cursos = await Curso.findAll()
-        res.render('cursos', { cursos })
+        const cursos = await Curso.findAll({
+            include: ['area']
+        })
+        res.render('cursos', {cursos})
+    },
+    novoAluno: (req, res) => {
+        res.render('novoAluno')
+    },
+    cadastroAluno: async (req, res) => {
+        const { nome, sobrenome, matricula } = req.body 
+        await Aluno.create({
+            nome,
+            sobrenome,
+            ano_matricula: matricula
+        })
+        res.redirect('/alunos')
+    },
+    edit: async (req, res) => {
+        const { id } = req.params
+        const edit = await Aluno.findByPk(id)
+        res.render('editarAluno', { edit })
+    },
+    editado: async (req, res) => {
+        const { id } = req.params
+        const { nome, sobrenome, matricula } = req.body
+        await Aluno.update({
+            nome, 
+            sobrenome,
+            ano_matricula: matricula
+        }, {
+            where: {
+                id
+            }
+        })
+        res.redirect('/alunos')
+    },
+    deleteAluno: async (req, res) => {
+        const { id } = req.params
+        await Aluno.destroy({
+            where: {
+                id
+            }
+        })
+        res.redirect('/alunos')
+    },
+    novoCurso: (req, res) => {
+        res.render('novoCurso')
+    },
+    cadastroCurso: async (req, res) => {
+        const { nome } = req.body
+        await Curso.create({
+            nome
+        })
+        res.redirect('/cursos')
     }
 }

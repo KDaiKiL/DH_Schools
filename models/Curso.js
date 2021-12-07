@@ -6,13 +6,19 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
             primaryKey: true
         },
-        nome: {
-            type: dataTypes.STRING,
-            allowNull: false
-        }
+        nome: dataTypes.STRING,
+        area_id: dataTypes.INTEGER,
     }, {
         tableName: 'cursos'
     });
+
+
+    Curso.associate = (models) => {
+        Curso.belongsTo(models.Area, {
+            as: 'area',
+            foreignKey: 'area_id'
+        })
+    }
 
     return Curso
 }
