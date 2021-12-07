@@ -10,7 +10,7 @@ router.get('/alunos2019', escola.alunosYear19);
 router.get('/alunos2019/Re', escola.alunosReYear19);
 router.get('/alunos-ultimos', escola.alunos2desc);
 router.get('/professoresId3515', escola.professoresId);
-router.get('/turmas', escola.turmas);
+router.get('/turmas', escola.turmas); 
 router.get('/areas', escola.areas)
 
 router.get('/aluno/cadastro', escola.novoAluno)

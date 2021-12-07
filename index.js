@@ -12,4 +12,4 @@ app.use(express.urlencoded({extended: false}));
 app.use(escolaRouter);
 
 
-app.listen(3000, () => console.log('server rodando'));
+app.listen(3000, () => console.log('server rodando')); 

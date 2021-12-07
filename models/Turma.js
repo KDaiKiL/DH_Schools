@@ -21,5 +21,5 @@ module.exports = (sequelize, dataTypes) => {
     }, {
         tableName: 'turmas'
     })
-    return Turma
+    return Turma 
 }
